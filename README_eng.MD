@@ -144,6 +144,4 @@ Thank you for exploring this repository! I hope it helps you learn and implement
 
 ---
 
-If Kakak like, I can generate a **README template with custom badges** (build status, license, IoT protocols) and also create a **Spanish** or **Indonesian** version.
-::contentReference[oaicite:5]{index=5}
-```
+
