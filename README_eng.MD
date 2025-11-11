@@ -1,7 +1,3 @@
-Oke, Kak — kemungkinan error-nya muncul karena **blok kode** atau **diagram Mermaid** dalam README tadi belum diformat sesuai standar GitHub Markdown.
-Berikut versi **aman untuk langsung di-copy ke GitHub** tanpa error, sudah saya bersihkan dari karakter yang bisa menyebabkan parsing issue 👇
-
----
 
 ```markdown
 # ESP32 IoT Protocol Examples
