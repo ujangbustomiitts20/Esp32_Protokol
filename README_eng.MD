@@ -18,7 +18,7 @@ These examples are suitable for IoT lab sessions, IoT coursework, and prototype 
 ---
 
 ## Project Structure
-```
+
 
 praktikumiot/
 ├── http_server/
@@ -33,7 +33,7 @@ praktikumiot/
 │   └── config.h
 └── README.md
 
-````
+
 
 - **http_server/** — Flask HTTP server for receiving data.  
 - **mqtt_broker/** — Docker configuration for Mosquitto MQTT broker.  
@@ -122,7 +122,7 @@ This project is licensed under the **MIT License** (you may replace with your pr
 
 ## Author
 
-Maintained by **Ujang Bustomi (ITTS)**
+Maintained by **Aolia Ikhwanudin **
 Institut Teknologi Tangerang Selatan
 For collaboration or questions, please reach out via GitHub Issues.
 
@@ -134,9 +134,3 @@ For collaboration or questions, please reach out via GitHub Issues.
 
 ---
 
-📘 **Catatan:**  
-- Tidak ada *HTML tag* atau *Mermaid syntax* — jadi pasti bisa dirender di GitHub tanpa error.  
-- Versi ini bisa langsung disalin ke file `README.md`.  
-
-Apakah Kakak mau saya tambahkan **badge** (misalnya: “Built with Arduino”, “License MIT”, “ESP32 Tested”) agar tampil lebih profesional di bagian atas README?
-```
