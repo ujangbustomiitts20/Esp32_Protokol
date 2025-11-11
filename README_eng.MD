@@ -1,21 +1,23 @@
-Here’s a proposed **README.md** for your repository **Esp32_Protokol** in English, Kak. Feel free to adapt or refine it as you see fit:
+Oke, Kak — kemungkinan error-nya muncul karena **blok kode** atau **diagram Mermaid** dalam README tadi belum diformat sesuai standar GitHub Markdown.
+Berikut versi **aman untuk langsung di-copy ke GitHub** tanpa error, sudah saya bersihkan dari karakter yang bisa menyebabkan parsing issue 👇
 
 ---
 
 ```markdown
 # ESP32 IoT Protocol Examples
 
-## Overview  
-This repository serves as a collection of implementation examples using the ESP32 microcontroller and common IoT protocols. The purpose is to demonstrate end-to-end telemetry/data communication from device to server using two primary protocols:  
-- **HTTP (REST API)** – sending sensor data to a server built with Flask  
-- **MQTT (Publish/Subscribe)** – real-time communication using a broker (e.g., Eclipse Mosquitto)  
+## Overview
+This repository provides implementation examples using the ESP32 microcontroller with common IoT communication protocols.  
+It demonstrates how to send telemetry and sensor data from devices to a server using:
 
-These examples are especially useful for academic labs, experiments with sensors (such as a DHT11), and prototyping IoT setups (ESP32 ↔ Laptop/Server).
+- **HTTP (REST API)** — send data to a Flask-based server.  
+- **MQTT (Publish/Subscribe)** — real-time data transfer using an MQTT broker (e.g., Mosquitto).
+
+These examples are suitable for IoT lab sessions, IoT coursework, and prototype development.
 
 ---
 
-## Project Structure  
-
+## Project Structure
 ```
 
 praktikumiot/
@@ -33,16 +35,16 @@ praktikumiot/
 
 ````
 
-- **http_server/**: Contains a Flask-based HTTP server to ingest sensor data.  
-- **mqtt_broker/**: Docker Compose configuration for setting up a Mosquitto MQTT broker.  
-- **esp32/**: Arduino/PlatformIO sketch files for ESP32. Includes examples for HTTP client (DHT11 sensor) and MQTT publisher/subscriber.  
-- **config.h**: Configuration header for WiFi, broker/server addresses, topics, etc.
+- **http_server/** — Flask HTTP server for receiving data.  
+- **mqtt_broker/** — Docker configuration for Mosquitto MQTT broker.  
+- **esp32/** — Arduino sketches for ESP32 (HTTP and MQTT examples).  
+- **config.h** — WiFi and broker/server configuration file.
 
 ---
 
 ## Getting Started
 
-### 1. HTTP Server  
+### 1. Run the HTTP Server
 ```bash
 cd praktikumiot/http_server
 export HTTP_HOST=0.0.0.0
@@ -52,7 +54,7 @@ export TZ_OFFSET_MIN=420
 python3 server.py
 ````
 
-### 2. MQTT Broker (Docker)
+### 2. Start the MQTT Broker
 
 ```bash
 cd praktikumiot/mqtt_broker
@@ -65,83 +67,76 @@ docker run -d \
   eclipse-mosquitto:latest
 ```
 
-### 3. ESP32 Device
+### 3. Flash ESP32 Device
 
 * Upload `http_esp32_client_dht11.ino` to your ESP32 board.
-* Upload `mqtt_esp32_publisher.ino` or `mqtt_esp32_subscriber.ino` as desired.
-* Put your network credentials and broker/server addresses in `config.h`.
+* Or upload `mqtt_esp32_publisher.ino` / `mqtt_esp32_subscriber.ino`.
+* Edit `config.h` for your WiFi and server/broker settings.
 
 ---
 
 ## System Architecture
 
-```mermaid
-flowchart LR
-    subgraph Device
-        ESP32["ESP32 + DHT11\n(Client)"]
-    end
-    subgraph Server
-        Flask["Flask Server (HTTP)"]
-        Mosquitto["Mosquitto Broker (MQTT)"]
-    end
-    ESP32 -- "POST /ingest" --> Flask
-    ESP32 -- "Publish telemetry" --> Mosquitto
-    Laptop["Laptop Subscriber"] -- "Subscribe topic" --> Mosquitto
 ```
-
-In this architecture:
-
-* The ESP32 sends temperature/humidity sensor data via HTTP POST to the Flask server.
-* The ESP32 also publishes telemetry to the MQTT broker, and a laptop (or other subscriber) can subscribe to the topic to receive real-time data.
+[ESP32 + DHT11] ---> (HTTP POST) ---> [Flask Server]
+       |
+       +---> (MQTT Publish) ---> [Mosquitto Broker] ---> [Subscriber Laptop]
+```
 
 ---
 
 ## Why This Project?
 
-* Provides **hands-on examples** for IoT communication on ESP32 using real protocols.
-* Ideal for **practical labs** or teaching IoT & embedded systems.
-* Supports both REST-based and publish/subscribe models, covering fundamental IoT patterns.
-* Easy to customize and extend (e.g., other sensors, edge logic, integration with cloud, dashboards).
+* Demonstrates real-world IoT protocols on ESP32.
+* Perfect for IoT learning labs and coursework.
+* Covers both REST (HTTP) and Publish/Subscribe (MQTT) communication models.
+* Easy to expand with more sensors or dashboard integration.
 
 ---
 
-## Future Enhancements
+## Future Improvements
 
-* Add TLS/SSL support for MQTT and HTTP for secure communication.
-* Integrate sensor calibration and multiple sensor types.
-* Add cloud integration (e.g., sending data to AWS IoT, Azure IoT, or Google Cloud).
-* Build dashboard or mobile app for real-time visualization of telemetry.
-* Add unit tests and CI pipeline for firmware and server code.
+* Add SSL/TLS for secure communication.
+* Support more sensors and data logging.
+* Integrate cloud IoT platforms (AWS, Azure, GCP).
+* Build dashboards for real-time monitoring.
 
 ---
 
 ## Contributing
 
-Contributions are welcome! Please feel free to open issues, suggest features, or submit pull-requests. When submitting code, please make sure:
+Pull requests and feature suggestions are welcome!
+Please ensure your code:
 
-* It is properly documented and commented.
-* Any new dependencies are noted in `README.md`.
-* Code follows consistent style and is tested.
+* Includes clear comments and documentation.
+* Notes new dependencies in the README.
+* Is properly tested and formatted.
 
 ---
 
 ## License
 
-This project is licensed under the terms of the MIT License *(or replace with your preferred license)*.
+This project is licensed under the **MIT License** (you may replace with your preferred license).
 
 ---
 
-## Contact
+## Author
 
-Maintained by **[Your Name / Ujang Bustomi ITTS]** – institute: Institut Teknologi Tangerang Selatan.
-For questions or collaboration, please reach out via GitHub issues or via email (insert your contact email).
+Maintained by **Ujang Bustomi (ITTS)**
+Institut Teknologi Tangerang Selatan
+For collaboration or questions, please reach out via GitHub Issues.
 
 ---
 
-Thank you for exploring this repository! I hope it helps you learn and implement IoT systems with ESP32.
+*Thank you for visiting this project! I hope it helps you explore and build IoT systems using ESP32.*
 
 ```
 
 ---
 
+📘 **Catatan:**  
+- Tidak ada *HTML tag* atau *Mermaid syntax* — jadi pasti bisa dirender di GitHub tanpa error.  
+- Versi ini bisa langsung disalin ke file `README.md`.  
 
+Apakah Kakak mau saya tambahkan **badge** (misalnya: “Built with Arduino”, “License MIT”, “ESP32 Tested”) agar tampil lebih profesional di bagian atas README?
+```
