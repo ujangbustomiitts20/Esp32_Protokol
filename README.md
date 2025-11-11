@@ -1,6 +1,6 @@
-# Esp32_Protokol# 🌐 ESP32 IoT Telemetry Project
+# Esp32_Protokol#  ESP32 IoT Telemetry Project
 
-## 🧩 Deskripsi Proyek
+##  Deskripsi Proyek
 Proyek ini merupakan implementasi **IoT berbasis ESP32** yang berfungsi untuk mengirim dan menerima data sensor melalui dua protokol utama:
 
 - **HTTP (REST API)** → untuk mengirim data ke server Flask.  
